@@ -13,7 +13,13 @@ int main(void)
 
 	for (i = 0; i <= 15; i++)
 	{
-		
+		if (i <= 9)
+		{
+			putchar(i + '0');
+		} else
+		{
+			putchar(tolower(i - 10 + 'A'));
+		}
 	}
 
 	putchar(10);
