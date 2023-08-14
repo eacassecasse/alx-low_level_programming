@@ -9,10 +9,9 @@
 int main(void)
 {
 
-	int i, j, k, counter;
+	int i, j, k;
 	int comb;
 	int separ[] = {44, 32};
-	int length = sizeof(separ) /sizeof(separ[0]);
 
 	for (i = 0; i <= 9; i++)
 	{
@@ -30,11 +29,9 @@ int main(void)
 
 					if (comb < 789)
 					{
-						for (counter = 0; counter < length; counter++)
-						{
-							putchar(separ[counter]);
-						}
-					}	
+						putchar(separ[0]);
+						putchar(separ[1]);
+					}
 				}
 			}
 		}
