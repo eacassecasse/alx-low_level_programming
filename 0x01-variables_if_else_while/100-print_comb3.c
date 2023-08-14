@@ -11,9 +11,9 @@ int main(void)
 {
 
 	int i, j, k;
-	char comb[10];
-	const char separator[] = ", ";
-	int length = strlen(separator);
+	int comb;
+	const int separator[] = {44, 32};
+	int length = sizeof(separator) / sizeof(separator[0]);
 
 	for (i = 0; i <= 9; i++)
 	{
@@ -21,24 +21,22 @@ int main(void)
 		{
 			if (i < j)
 			{
-				int tmp;
 
-				sprintf(comb, "%d%d", i, j);
+				comb = i * 10 + j; 
 
-				tmp = atoi(comb);
 
-				if (tmp >= 10)
+				if (comb >= 10)
 				{
-					putchar('0' + tmp / 10);
+					putchar('0' + comb / 10);
 				}
 				else
 				{
 					putchar('0');
 				}
 
-				putchar('0' + tmp % 10);
+				putchar('0' + comb % 10);
 
-				if (tmp < 89)
+				if (comb < 89)
 				{
 					for (k = 0; k < length; k++)
 					{
