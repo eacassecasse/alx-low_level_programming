@@ -9,8 +9,10 @@
 int main(void)
 {
 
-	int i, j, k;
-	char comb[10];
+	int i, j, k, counter;
+	int comb;
+	int separ[] = {44, 32};
+	int length = sizeof(separ) /sizeof(separ[0]);
 
 	for (i = 0; i <= 9; i++)
 	{
@@ -20,21 +22,25 @@ int main(void)
 			{
 				if (i < j && j < k)
 				{
-				
-					int tmp;
+					comb = i * 100 + j * 10 + k;
 
-					sprintf(comb, "%d%d%d", i, j, k);
+					putchar('0' + comb / 100);
+					putchar('0' + comb % 100 / 10);
+					putchar('0' + comb % 10);
 
-					tmp = atoi(comb);
-
-					putchar('0' + tmp / 10);
-					putchar('0' + tmp / 10);
-					putchar(tmp % 10 + '0');
-					putchar(32);
+					if (comb < 789)
+					{
+						for (counter = 0; counter < length; counter++)
+						{
+							putchar(separ[counter]);
+						}
+					}	
 				}
 			}
 		}
 	}
+
+	putchar(10);
 
 	return (0);
 }
