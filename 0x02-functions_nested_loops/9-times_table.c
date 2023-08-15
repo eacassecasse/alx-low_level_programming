@@ -22,11 +22,14 @@ void times_table(void)
 
 			_putchar('0' + res % 10);
 
+			
 			if (j != 9)
 			{
 				_putchar(44);
 				_putchar(32);
-				_putchar(32);
+
+				if (res <= 9)
+					_putchar(32);
 			}
 		}
 
