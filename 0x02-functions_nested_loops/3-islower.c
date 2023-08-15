@@ -15,7 +15,7 @@ int _islower(int c)
 	int lwLimit2 = 97;
 	int highLimit1 = 90;
 	int highLimit2 = 122;
-	
+
 	if (c >= lwLimit1 && c <= highLimit1)
 	{
 		result = 0;
@@ -28,5 +28,5 @@ int _islower(int c)
 		}
 	}
 
-	return result;
+	return (result);
 }
