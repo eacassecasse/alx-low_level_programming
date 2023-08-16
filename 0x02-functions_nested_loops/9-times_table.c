@@ -17,20 +17,16 @@ void times_table(void)
 		{
 			int res = i * j;
 
-			if (res >= 10)
-				_putchar('0' + res / 10);
+			(res >= 10) ? _putchar('0' + res / 10) : _putchar(32);
 
 			_putchar('0' + res % 10);
 
-			
-			if (j != 9)
+			if (j < 9)
 			{
 				_putchar(44);
 				_putchar(32);
-
-				if (res <= 9)
-					_putchar(32);
 			}
+
 		}
 
 		_putchar(10);
