@@ -10,13 +10,13 @@
 int main(void)
 {
 	int i;
-	long int prevEl = 1;
-	long int curEl = 1;
-	long int auxPrevEl;
+	unsigned long int prevEl = 1;
+	unsigned long int curEl = 1;
+	unsigned long int auxPrevEl;
 
 	for (i = 0; i < 98; i++)
 	{
-		(i < 97) ? printf("%ld, ", curEl) : printf("%ld\n", curEl);
+		(i < 97) ? printf("%lu, ", curEl) : printf("%lu\n", curEl);
 
 		auxPrevEl = prevEl;
 		prevEl = curEl;
