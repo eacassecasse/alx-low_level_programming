@@ -14,9 +14,9 @@ int main(void)
 	long curEl = 1;
 	long auxPrevEl;
 
-	for (i = 0; i < 50; i++)
+	for (i = 0; i <= 50; i++)
 	{
-		(i < 49) ? printf("%ld, ", curEl) : printf("%ld\n", curEl);
+		(i < 50) ? printf("%ld, ", curEl) : printf("%ld\n", curEl);
 
 		auxPrevEl = prevEl;
 		prevEl = curEl;
