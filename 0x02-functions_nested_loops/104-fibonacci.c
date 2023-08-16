@@ -14,9 +14,9 @@ int main(void)
 	unsigned long int curEl = 1;
 	unsigned long int auxPrevEl;
 
-	for (i = 0; i < 98; i++)
+	for (i = 0; i < 95; i++)
 	{
-		(i < 97) ? printf("%lu, ", curEl) : printf("%lu\n", curEl);
+		(i < 94) ? printf("%lu, ", curEl) : printf("%lu\n", curEl);
 
 		auxPrevEl = prevEl;
 		prevEl = curEl;
