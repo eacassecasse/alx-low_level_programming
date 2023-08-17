@@ -19,11 +19,8 @@ void print_number(int n)
 
 	if (n == INT_MIN)
 	{
-		int absVal;
-
-		absVal = -(INT_MAX) - 1;
 		_putchar('-');
-		print_number(absVal);
+		print_number(147483648);
 		return;
 	}
 
