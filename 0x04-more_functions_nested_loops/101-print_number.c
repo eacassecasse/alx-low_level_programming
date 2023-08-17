@@ -11,7 +11,9 @@
  */
 void print_number(int n)
 {
-	if (n == 0)
+	unsigned int num = n;
+
+	if (num == 0)
 	{
 		_putchar(48);
 		return;
@@ -19,19 +21,22 @@ void print_number(int n)
 
 	if (n == INT_MIN)
 	{
+		int absVal;
+
+		absVal = -(INT_MAX) - 1;
 		_putchar('-');
-		print_number(147483648);
+		print_number(absVal);
 		return;
 	}
 
 	if (n < 0)
 	{
-		n = -n;
+		num = -num;
 		_putchar('-');
 	}
 
-	if (n >= 10)
-		print_number(n / 10);
+	if (num >= 10)
+		print_number(num / 10);
 
-	_putchar('0' + n % 10);
+	_putchar('0' + num % 10);
 }
