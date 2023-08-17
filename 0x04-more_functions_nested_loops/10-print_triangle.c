@@ -5,7 +5,7 @@
  * print_triangle - Custom function
  * @size: integer parameter to limit the loop
  *
- * Description: Print a triangle of size x size matrix 
+ * Description: Print a triangle of size x size matrix
  * Return: void
  */
 void print_triangle(int size)
