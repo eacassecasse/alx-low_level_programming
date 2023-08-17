@@ -13,12 +13,12 @@ int main(void)
 
 	for (i = 1; i <= 100; i++)
 	{
-		if (i % 3 == 0)
-			(i < 100) ? printf("Fizz ") : printf("Fizz");
+		if (i % 3 == 0 && i % 5 == 0)
+			(i < 100) ? printf("FizzBuzz ") : printf("FizzBuzz");
 		else if (i % 5 == 0)
 			(i < 100) ? printf("Buzz ") : printf("Buzz");
-		else if (i % 3 == 0 && i % 5 == 0)
-			(i < 100) ? printf("FizzBuzz ") : printf("FizzBuzz");
+		else if (i % 3 == 0)
+			(i < 100) ? printf("Fizz ") : printf("Fizz");
 		else
 			(i < 100) ? printf("%d ", i) : printf("%d", i);
 	}
