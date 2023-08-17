@@ -5,7 +5,7 @@
  * print_square - Custom function
  * @size: integer parameter to limit the loop
  *
- * Description: Print a size x size matrix 
+ * Description: Print a size x size matrix
  * Return: void
  */
 void print_square(int size)
