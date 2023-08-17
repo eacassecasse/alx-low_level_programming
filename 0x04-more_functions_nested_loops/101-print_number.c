@@ -1,4 +1,5 @@
 #include "main.h"
+#include <limits.h>
 
 
 /**
@@ -10,6 +11,22 @@
  */
 void print_number(int n)
 {
+	if (n == 0)
+	{
+		_putchar(48);
+		return;
+	}
+
+	if (n == INT_MIN)
+	{
+		int absVal;
+
+		absVal = -(INT_MAX) - 1;
+		_putchar('-');
+		print_number(absVal);
+		return;
+	}
+
 	if (n < 0)
 	{
 		n = -n;
