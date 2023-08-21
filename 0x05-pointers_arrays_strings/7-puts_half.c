@@ -19,7 +19,7 @@ void puts_half(char *str)
 	{
 		length++;
 	}
-		
+
 	start_pos = (length + 1) / 2;
 
 
