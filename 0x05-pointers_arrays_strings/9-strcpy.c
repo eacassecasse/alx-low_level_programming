@@ -6,7 +6,7 @@
  * Description: Copies a string to the buffer
  * Return: char *
  */
-char * _strcpy(char *dest, char *src)
+char *_strcpy(char *dest, char *src)
 {
 	int i;
 
@@ -15,5 +15,7 @@ char * _strcpy(char *dest, char *src)
 		dest[i] = src[i];
 	}
 
-	return dest;
+	dest[i] = '\0';
+
+	return (dest);
 }
