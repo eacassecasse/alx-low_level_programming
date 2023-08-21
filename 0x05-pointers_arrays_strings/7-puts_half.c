@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * puts_char - Custom function
+ * puts_half - Custom function
  * @str: pointer to an char to print its last half
  *
  * Description: Prints the last half of a given string
