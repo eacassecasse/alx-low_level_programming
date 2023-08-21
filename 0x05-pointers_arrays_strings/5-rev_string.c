@@ -10,27 +10,28 @@
 void rev_string(char *s)
 {
 
-	char *ptr;
-	int length;
+	char val;
+	char *endPtr, *startPtr;
 
-	length = 0;
-	*ptr = *s;
+	endPtr = s;
 
-	while (*s != '\0')
+	while (*endPtr != '\0')
 	{
-		length++;
-		s++;
+		endPtr++;
 	}
 
-	s--;
+	endPtr--;
 
-	while (length > 0)
+	startPtr = s;
+
+	while (startPtr < endPtr)
 	{
-		_putchar(*s);
-		s--;
-		length--;
-	}
+		val = *startPtr;
+		*startPtr = *endPtr;
+		*endPtr = val;
 
-	_putchar(10);
+		startPtr++;
+		endPtr--;
+	}
 
 }
