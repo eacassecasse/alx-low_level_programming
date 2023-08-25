@@ -10,18 +10,14 @@
 
 void print_number(int n)
 {
-	unsigned int ncopy;
-
 	if (n < 0)
 	{
 		_putchar('-');
-		ncopy = -n;
+		n = -n;
 	}
-	else
-		ncopy = n;
 
-	if (ncopy >= 10)
-		print_number(ncopy / 10);
+	if (n >= 10)
+		print_number(n / 10);
 
-	_putchar('0' + (ncopy % 10));
+	_putchar('0' + (n % 10));
 }
