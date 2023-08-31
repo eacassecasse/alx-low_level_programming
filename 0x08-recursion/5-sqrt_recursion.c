@@ -21,7 +21,7 @@ int _sqrt(int n, int it)
 
 
 /**
- * sqrt_recursion - Custom function
+ * _sqrt_recursion - Custom function
  * @n: The number to get its square root
  *
  * Description: Gets the square root of a number recursively
