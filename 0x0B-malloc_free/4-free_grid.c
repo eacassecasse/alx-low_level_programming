@@ -3,7 +3,7 @@
 #include <stddef.h>
 
 /**
- * free_arid - Custom function
+ * free_grid - Custom function
  * @grid: width of the matrix
  * @height: height of the matrix
  *
