@@ -3,8 +3,8 @@
 #include <stdio.h>
 
 /**
- * print_listint_safe - Custom function
- * @head: pointer to singly linked list
+ * free_listint_safe - Custom function
+ * @h: pointer to singly linked list
  *
  * Description: Prints the elements of the linked list
  * Return: The number of nodes on the list
