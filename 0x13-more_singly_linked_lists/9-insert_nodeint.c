@@ -5,7 +5,7 @@
  * insert_nodeint_at_index - Custom function
  * @head: pointer to singly linked list
  * @idx: position of where to add the node
- * @n: data of the new node 
+ * @n: data of the new node
  *
  * Description: Adds a new node by index on a linked list
  * Return: Address of the new node or NULL
