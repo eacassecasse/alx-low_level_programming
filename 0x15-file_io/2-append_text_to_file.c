@@ -11,34 +11,26 @@
  * Description: Appends text to a file
  * Return: 1 on success and -1 on failure
  */
-
 int append_text_to_file(const char *filename, char *text_content)
 {
-	if (filename)
+	int file, fw, length = 0;
+
+	if (filename == NULL)
+		return (-1);
+
+	if (text_content != NULL)
 	{
-		int file, fw = 0, length = 0;
-
-		file = open(filename, O_RDWR | O_APPEND);
-
-		if (file < 0)
-			return (-1);
-
-		if (text_content)
-		{
-			while (text_content[length])
-				length++;
-		}
-
-		fw = write(file, text_content, length);
-
-		if (fw < 0)
-			return (-1);
-
-		close(file);
-
-		return (fw);
+		while (text_content[length])
+			length++;
 	}
 
-	return (-1);
-}
+	file = open(filename, O_WRONLY | O_APPEND);
+	fw = write(file, text_content, length);
 
+	if (file == -1 || fw == -1)
+		return (-1);
+
+	close(file);
+
+	return (1);
+}
