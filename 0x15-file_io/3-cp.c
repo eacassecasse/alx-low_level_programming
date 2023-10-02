@@ -48,7 +48,7 @@ char *create_buf(const char *file)
 }
 
 /**
- * cp_file - Custom function
+ * copy_file - Custom function
  * @file_from: source file
  * @file_to: destination file
  *
