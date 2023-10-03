@@ -15,13 +15,13 @@
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *newStr;
-	unsigned int s1_len, s2_len;
+	unsigned int s1_len = 0, s2_len = 0, i = 0, j = 0;
 
-	s1_len = _strlen(s1);
-	s2_len = _strlen(s2);
+	while (s1 && s1[s1_len])
+		s1_len++;
 
-	if (n <= 0)
-		return (NULL);
+	while (s2 && s2[s2_len])
+		s2_len++;
 
 	if (n < s2_len)
 		newStr = malloc(sizeof(char) * (s1_len + n + 1));
@@ -31,41 +31,22 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (!newStr)
 		return (NULL);
 
-	while (*s1)
+	while (i < s1_len)
 	{
-		*newStr = *s1;
-		newStr++;
-		s1++;
+		newStr[i] = s1[i];
+		i++;
 	}
 
-	newStr++;
+	while (n < s2_len && i < (s1_len + n))
+		newStr[i++] = s2[j++];
 
-	while (*s2 && n <= s2_len)
-	{
-		*newStr = *s2;
-		newStr++;
-		s2++;
-	}
+	while (n >= s2_len && i < (s1_len + s2_len))
+		newStr[i++] = s2[j++];
+
+	newStr[i] = '\0';
 
 
 	return (newStr);
 }
 
-/**
- * _strlen - Custom function
- * @str: string to evaluate its length
- *
- * Description: Counts the length of a string
- * Return: String length
- */
-
-unsigned int _strlen(char *str)
-{
-	unsigned int len = 0;
-
-	while (str[len])
-		len++;
-
-	return (len);
-}
 
