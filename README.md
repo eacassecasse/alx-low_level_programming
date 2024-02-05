@@ -1,1 +1,1 @@
-This repository will contain all the answer for the C Programming Language task
+All the answers fo variadic functions task will be held in here

@@ -11,40 +11,31 @@
  */
 void print_number(int n)
 {
-	unsigned int z;
-	int m, b;
+	int num = n;
 
-	b = 10;
-
-	if (n < 10 && n >= 0)
+	if (num == 0)
 	{
-		_putchar (n + '0');
+		_putchar(48);
+		return;
 	}
-	else if (n > -10 && n < 0)
+
+	if (n == INT_MIN)
 	{
-		n = n - 2 * n;
 		_putchar('-');
-		_putchar (n + '0');
+		print_number(147483648);
+		return;
 	}
 
-	else
+	if (n < 0)
 	{
-		if (n < 0)
-		{
-			n = n * -1;
-			_putchar ('-');
-		}
-		z = n;
-	while (z / b > 9)
+		num = -num;
+		_putchar('-');
+	}
+
+	if (num >= 10)
 	{
-		b = b * 10;
+		print_number(num / 10);
 	}
-	while (b > 0)
-	{
-		m = z / b;
-		z = z % b;
-		_putchar (m + '0');
-		b = b / 10;
-	}
-	}
+
+	_putchar(num % 10 + '0');
 }
