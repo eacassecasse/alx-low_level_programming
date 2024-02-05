@@ -1,1 +1,1 @@
-All the answers about variables, conditional and loops will be held in here
+All the answers for hash tables will be held in here
