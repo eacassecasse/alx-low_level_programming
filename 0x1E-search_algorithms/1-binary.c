@@ -10,7 +10,7 @@ int _binary_search(int *array, size_t size, int value);
  * @value: The value to search for.
  *
  * Description: Searches for a value into an array
- * 		recursively.
+ *		recursively.
  *
  * Return: The index of where the value is or -1 in
  *         case the value is not found or the array is
@@ -18,32 +18,31 @@ int _binary_search(int *array, size_t size, int value);
  */
 int _binary_search(int *array, size_t size, int value)
 {
+	size_t pivot = size / 2;
+	size_t i;
 
-    size_t pivot = size / 2;
-    size_t i;
+	if (array == NULL || size == 0)
+		return (-1);
 
-    if (array == NULL || size == 0)
-	    return (-1);
+	printf("Searching in array");
 
-    printf("Searching in array");
+	for (i = 0; i < size; i++)
+		printf("%s %d", (i == 0) ? ":" : ",", array[i]);
 
-    for (i = 0; i < size; i++)
-	    printf("%s %d", (i == 0) ? ":" : ",", array[i]);
+	printf("\n");
 
-    printf("\n");
+	if (pivot && size % 2 == 0)
+		pivot--;
 
-    if (pivot && size % 2 == 0)
-	    pivot--;
+	if (value == array[pivot])
+		return ((int) pivot);
 
-    if (value == array[pivot])
-	    return ((int) pivot);
+	if (value < array[pivot])
+		return (_binary_search(array, pivot, value));
 
-    if (value < array[pivot])
-	    return (_binary_search(array, pivot, value));
+	pivot++;
 
-    pivot++;
-
-    return (_binary_search(array + pivot, size - pivot, value) + pivot);
+	return (_binary_search(array + pivot, size - pivot, value) + pivot);
 }
 
 
@@ -54,7 +53,7 @@ int _binary_search(int *array, size_t size, int value)
  * @value: The value to search for.
  *
  * Description: Searches for a value into an array
- * 		using binary search algorithm.
+ *		using binary search algorithm.
  *
  * Return: The index of where the value is or -1 in
  *         case the value is not found or the array is
@@ -62,13 +61,13 @@ int _binary_search(int *array, size_t size, int value)
  */
 int binary_search(int *array, size_t size, int value)
 {
-    int pos;
+	int pos;
 
-    pos = _binary_search(array, size, value);
+	pos = _binary_search(array, size, value);
 
-    if (pos >= 0 && array[pos] != value)
-	    return (-1);
+	if (pos >= 0 && array[pos] != value)
+		return (-1);
 
-    return (pos);
+	return (pos);
 }
 
