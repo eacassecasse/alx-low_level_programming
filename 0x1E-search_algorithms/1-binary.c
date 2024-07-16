@@ -16,29 +16,30 @@ int _binary_search(int *array, size_t size, int value);
  *         case the value is not found or the array is
  *         empty.
  */
-int _binary_search(int *array, size_t size, int value) {
+int _binary_search(int *array, size_t size, int value)
+{
 
     size_t pivot = size / 2;
     size_t i;
 
     if (array == NULL || size == 0)
-        return (-1);
+	    return (-1);
 
     printf("Searching in array");
 
     for (i = 0; i < size; i++)
-        printf("%s %d", (i == 0) ? ":" : ",", array[i]);
+	    printf("%s %d", (i == 0) ? ":" : ",", array[i]);
 
     printf("\n");
 
     if (pivot && size % 2 == 0)
-        pivot--;
+	    pivot--;
 
     if (value == array[pivot])
-        return ((int) pivot);
+	    return ((int) pivot);
 
     if (value < array[pivot])
-        return (_binary_search(array, pivot, value));
+	    return (_binary_search(array, pivot, value));
 
     pivot++;
 
@@ -59,13 +60,14 @@ int _binary_search(int *array, size_t size, int value) {
  *         case the value is not found or the array is
  *         empty.
  */
-int binary_search(int *array, size_t size, int value) {
+int binary_search(int *array, size_t size, int value)
+{
     int pos;
 
     pos = _binary_search(array, size, value);
 
     if (pos >= 0 && array[pos] != value)
-        return (-1);
+	    return (-1);
 
     return (pos);
 }
