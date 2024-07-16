@@ -7,7 +7,7 @@
  * @value: The value to search for.
  *
  * Description: Searches for a value into an array
- * 		using linear search algorithm.
+ *		using linear search algorithm.
  *
  * Return: The index of where the value is or -1 in
  *         case the value is not found or the array is
@@ -15,18 +15,19 @@
  */
 int linear_search(int *array, size_t size, int value)
 {
-    int i;
+	int i;
 
-    if (array == NULL)
-	    return (-1);
+	if (array == NULL)
+		return (-1);
 
-    for (i = 0; i < (int)size; i++)
-    {
-	    printf("Value checked array[%u] = [%d]\n", i, array[i]);
 
-	    if (value == array[i])
-		    return (i);
-    }
+	for (i = 0; i < (int)size; i++)
+	{
+		printf("Value checked array[%u] = [%d]\n", i, array[i]);
 
-    return (-1);
+		if (value == array[i])
+			return (i);
+	}
+
+	return (-1);
 }
